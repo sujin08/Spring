@@ -1,0 +1,5 @@
+package kr.ac.hit.myapp.member;
+
+public interface MemberDao {
+	public int insert(MemberVo VO) ;
+}

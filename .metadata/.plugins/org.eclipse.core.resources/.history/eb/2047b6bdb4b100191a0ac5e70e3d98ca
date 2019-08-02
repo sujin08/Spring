@@ -1,0 +1,18 @@
+package kr.ac.hit.myapp.board;
+
+import javax.annotation.Resource;
+
+import org.springframework.stereotype.Service;
+
+@Service
+public class BoardserviceImpl implements Boardservice {
+
+	@Resource
+	private BoardDao boardDao ;
+	
+	@Override
+	public int insert(BoardVo vo) {
+		int num = boardDao.insert(vo);
+		return num;
+	}
+}

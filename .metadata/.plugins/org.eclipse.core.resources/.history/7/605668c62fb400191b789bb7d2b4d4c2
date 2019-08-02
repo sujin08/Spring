@@ -1,0 +1,117 @@
+package kr.ac.hit.myapp.comm;
+
+public class PageInfo {
+	private int page=1;
+	private int size=5;
+	private int pageSize=5;
+	private int totalRecordCount;
+	
+	private int totalPageCount;
+	private int firstPageNoOnPageList;
+	private int lastPageNoOnPageList;
+	private int firstRecordIndex;
+	private int lastRecordIndex;
+	
+	private String pageHtml;
+
+	public void makePageHtml() {
+		totalPageCount = ((totalRecordCount-1)/size) + 1;
+		firstPageNoOnPageList = ((page-1)/pageSize)*pageSize + 1;
+		lastPageNoOnPageList = firstPageNoOnPageList+pageSize-1;
+		if(lastPageNoOnPageList>totalPageCount){lastPageNoOnPageList=totalPageCount;};
+		firstRecordIndex = (page - 1) * size;
+		lastRecordIndex = page * size;
+		
+		String html="";
+		for (int i = firstPageNoOnPageList; i < lastPageNoOnPageList; i++) {
+			html += "<a href='hit/board/list.do?page="+ page +"'>"+ i +"</a>";
+		}
+		pageHtml=html;
+	}
+	
+
+	public String getPageHtml() {
+		return pageHtml;
+	}
+
+
+	public void setPageHtml(String pageHtml) {
+		this.pageHtml = pageHtml;
+	}
+
+
+	public int getPage() {
+		return page;
+	}
+
+	public void setPage(int page) {
+		this.page = page;
+	}
+
+	public int getSize() {
+		return size;
+	}
+
+	public void setSize(int size) {
+		this.size = size;
+	}
+
+	public int getPageSize() {
+		return pageSize;
+	}
+
+	public void setPageSize(int pageSize) {
+		this.pageSize = pageSize;
+	}
+
+	public int getTotalRecordCount() {
+		return totalRecordCount;
+	}
+
+	public void setTotalRecordCount(int totalRecordCount) {
+		this.totalRecordCount = totalRecordCount;
+	}
+
+	public int getTotalPageCount() {
+		return totalPageCount;
+	}
+
+	public void setTotalPageCount(int totalPageCount) {
+		this.totalPageCount = totalPageCount;
+	}
+
+	public int getFirstPageNoOnPageList() {
+		return firstPageNoOnPageList;
+	}
+
+	public void setFirstPageNoOnPageList(int firstPageNoOnPageList) {
+		this.firstPageNoOnPageList = firstPageNoOnPageList;
+	}
+
+	public int getLastPageNoOnPageList() {
+		return lastPageNoOnPageList;
+	}
+
+	public void setLastPageNoOnPageList(int lastPageNoOnPageList) {
+		this.lastPageNoOnPageList = lastPageNoOnPageList;
+	}
+
+	public int getFirstRecordIndex() {
+		return firstRecordIndex;
+	}
+
+	public void setFirstRecordIndex(int firstRecordIndex) {
+		this.firstRecordIndex = firstRecordIndex;
+	}
+
+	public int getLastRecordIndex() {
+		return lastRecordIndex;
+	}
+
+	public void setLastRecordIndex(int lastRecordIndex) {
+		this.lastRecordIndex = lastRecordIndex;
+	}
+
+
+
+}

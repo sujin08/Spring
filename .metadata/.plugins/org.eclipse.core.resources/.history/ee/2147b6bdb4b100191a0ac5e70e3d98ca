@@ -1,0 +1,6 @@
+package kr.ac.hit.myapp.board;
+
+public interface Boardservice {
+
+	public int insert(BoardVo vo);
+}

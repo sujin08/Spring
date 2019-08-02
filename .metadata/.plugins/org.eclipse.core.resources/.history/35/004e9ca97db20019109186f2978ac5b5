@@ -1,0 +1,5 @@
+package kr.ac.hit.myapp.comm;
+
+public class LoginInterceptor {
+
+}

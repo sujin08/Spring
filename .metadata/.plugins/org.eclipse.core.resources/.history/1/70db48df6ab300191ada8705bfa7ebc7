@@ -1,0 +1,13 @@
+package kr.ac.hit.myapp.board;
+
+import java.util.List;
+
+public interface Boardservice {
+
+	public int insert(BoardVo vo);
+	public List<BoardVo> selectList() ;
+	public BoardVo select(int bbsNo);
+	public int update(BoardVo vo);
+	public int delete(BoardVo vo);
+	public AttachVo selectAttach(int attNo);
+}

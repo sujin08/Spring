@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="kr.ac.hit.myapp.member.UserImgDao">
+    <insert id="insert" parameterType="UserImgVo">
+        INSERT INTO userimg(img_org_name, img_new_name, img_mem_no) 
+        VALUES (#{imgOrgName}, #{imgNewName}, #{imgMemNo})
+    </insert>
+</mapper>

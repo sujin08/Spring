@@ -1,0 +1,86 @@
+package kr.ac.hit.myapp.member;
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.util.List;
+
+import javax.annotation.Resource;
+
+import org.springframework.stereotype.Service;
+import org.springframework.util.FileCopyUtils;
+import org.springframework.web.multipart.MultipartFile;
+
+
+//@Component 역할 x @Controller @Service @ Repository dao역활
+@Service //컨트롤러 쪽에서 자동으로 스프링에 등록
+public class MemberServiceImpl implements MemberService {
+	
+	@Resource
+	private MemberDao MemDao;
+
+	
+	private String uploadImgDir ="C:/Temp/profile";{
+		new File(uploadImgDir).mkdirs();
+	}
+	
+	@Override
+	public int insert(MemberVo vo) {
+		MultipartFile f = vo.getUploadImgList();
+		
+		if(f != null && f.isEmpty()==false) {
+			String orgname = f.getOriginalFilename();
+			int idx = orgname.lastIndexOf('.');
+			String ext = idx<0 ? " " :orgname.substring(idx);
+			String newFileName = vo.getMemId() + ext;
+			File saveFile = new File(uploadImgDir, newFileName);
+			try {
+				f.transferTo(saveFile);
+				//Files.copy(f.getInputStream(), Paths.get(saveFile.getAbsoluteFile()));
+				//FileCopyUtils.copy(f.getInputStream(), new FileOutputStream(saveFile));
+				vo.setMemImg(newFileName);
+			} catch (IllegalStateException e) {
+				e.printStackTrace();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		int num = MemDao.insert(vo);
+		return num;
+	}
+	
+	@Override
+	public List<MemberVo> selectList() {
+		List<MemberVo> list = MemDao.selectList();
+		return list;
+	}	
+	
+	@Override
+	public MemberVo select(String memId) {
+		MemberVo vo = MemDao.select(memId);
+		return vo;
+	}
+	
+	@Override
+	public int update(MemberVo vo) {
+		int num = MemDao.update(vo);
+		return num;
+	}
+	
+	@Override
+	public int delete(String memId) {
+		int num = MemDao.delete(memId);
+		return num;
+	}
+	
+	@Override
+	public MemberVo selectLoginUser(MemberVo vo) {
+		MemberVo mvo = MemDao.selectLoginUser(vo);
+		return mvo;
+	}
+	
+}

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:mybatis-spring="http://mybatis.org/schema/mybatis-spring"
+	xsi:schemaLocation="http://mybatis.org/schema/mybatis-spring http://mybatis.org/schema/mybatis-spring-1.2.xsd
+		http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- Root Context: 스프링의 dispatcherServlet들이 공유하는 객체들을 등록 -->
+	<!-- 즉, 일반적으로 Service, Dao 와 관련된 객체들을 등록 -->
+
+	<!-- DB와 연결을 생성해주는 데이터소스 객체 등록 -->
+	<bean id="dataSource" class="org.apache.commons.dbcp2.BasicDataSource">
+		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
+		<property name="url" value="jdbc:mysql://localhost:3306/com" />
+		<property name="username" value="com" />
+		<property name="password" value="com01" />
+	</bean>
+
+	<!-- mybatise의SqlSession 객체를 생성해주는 객체를 등록 -->
+	<bean id="sqlSessionFactory"   class="org.mybatis.spring.SqlSessionFactoryBean">
+		<property name="dataSource" ref="dataSource" />
+		<property name="configLocation" value="classpath:batis/mybatis-config.xml" />
+	</bean>
+	
+	<!-- sqlSessionFactory를 사용하여 마이바티스의 sqlSession을 생성하고 이를 통해 SQL문을 실행하는 -->
+	<!-- <bean id="SqlSession" class="org.mybatis.spring.SqlSessionTemplate"> -->
+	<!-- 생성자(new)의 첫번째 인자로 "SqlSessionFactoryBean"라는 이름으로 등록된 객체를 전달 -->
+	<!-- 	<constructor-arg index="0" ref="sqlSessionFactory" />
+	</bean> -->
+	
+	<mybatis-spring:scan base-package="kr.ac.hit.myapp" annotation="org.apache.ibatis.annotations.Mapper"/>
+</beans>

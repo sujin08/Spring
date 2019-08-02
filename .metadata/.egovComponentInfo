@@ -1,0 +1,16 @@
+
+[2019.03.13 15:04:18] Installed component:	egovframework.com.cmm	공통
+[2019.03.13 15:04:18] Installed component:	egovframework.com.uat.uia	일반로그인
+[2019.03.13 15:04:18] Installed component:	egovframework.com.uat.uap	로그인정책관리
+[2019.03.13 15:04:18] Installed component:	egovframework.com.sec.security	보안
+[2019.03.13 15:04:18] Installed component:	egovframework.com.cop.ems	메일연동 인터페이스
+[2019.03.13 15:04:18] Installed component:	egovframework.com.uss.sam.stp	약관관리
+[2019.03.13 15:04:18] Installed component:	egovframework.com.uss.sam.cpy	저작권보호정책
+[2019.03.13 15:04:18] Installed component:	egovframework.com.uss.sam.ipm	개인정보보호정책확인/웹에디터&#40;WYSIWYG&#41;
+[2019.03.13 15:04:18] Installed component:	egovframework.com.utl.fcc	유틸리티
+[2019.03.13 15:04:18] Installed component:	egovframework.com.utl.wed	웹에디터
+[2019.03.13 15:04:18] Installed component:	egovframework.com.utl.sim	시스템정보확인
+[2019.03.20 10:22:10] Installed component:	egovframework.mbl.com.cmm	모바일 공통
+[2019.03.20 10:22:10] Installed component:	egovframework.mbl.com.uat.uia	인증서로그인/ 일반로그인
+[2019.03.20 10:22:10] Installed component:	egovframework.mbl.com.geo	위치정보연계
+[2019.03.20 10:22:10] Installed component:	egovframework.mbl.com.mpa	모바일 사진 앨범

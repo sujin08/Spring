@@ -1,0 +1,18 @@
+package kr.ac.hit.myapp.board;
+
+import java.util.List;
+
+import org.apache.ibatis.annotations.Mapper;
+
+import kr.ac.hit.myapp.comm.PageInfo;
+
+@Mapper
+public interface BoardDao {
+
+	public int insert(BoardVo vo) ;
+	public List<BoardVo> selectList(searchInfo info) ;
+	public BoardVo select(int bbsNo);
+	public int update(BoardVo vo);
+	public int delete(BoardVo vo);
+	public int selectCount(searchInfo info);
+}

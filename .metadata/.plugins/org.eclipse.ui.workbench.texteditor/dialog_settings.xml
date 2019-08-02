@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="org.eclipse.jst.jsp.ui.internal.preferences.ui.JSPTemplatePreferencePage$JSPEditTemplateDialog_dialogBounds">
+		<item value="1226" key="DIALOG_WIDTH"/>
+		<item value="1|맑은 고딕|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|맑은 고딕" key="DIALOG_FONT_NAME"/>
+		<item value="629" key="DIALOG_HEIGHT"/>
+		<item value="-162" key="DIALOG_X_ORIGIN"/>
+		<item value="199" key="DIALOG_Y_ORIGIN"/>
+	</section>
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
+		<item value="false" key="isRegEx"/>
+		<item value="spring-webmvc" key="selection"/>
+		<item value="false" key="casesensitive"/>
+		<item value="false" key="incremental"/>
+		<item value="true" key="wrap"/>
+		<item value="false" key="wholeword"/>
+		<list key="findhistory">
+			<item value="package kr.ac.hit.myapp.comm;"/>
+			<item value="package kr.ac.hit.myapp.member;"/>
+			<item value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; ?&gt;"/>
+			<item value="spring-webmvc"/>
+			<item value="mvn"/>
+			<item value="1.6.10"/>
+			<item value="AspectJ"/>
+			<item value="Aspectj\J"/>
+			<item value="Aspectj"/>
+			<item value="Asp"/>
+			<item value="package kr.ac.hit.ex;"/>
+			<item value="detection"/>
+			<item value="resource_update"/>
+			<item value="barcode_info"/>
+			<item value="file_opener_list"/>
+		</list>
+		<list key="replacehistory">
+			<item value="hsqldb-2.3.2.jar"/>
+			<item value="hsqldb-1.8.0.10.jar"/>
+		</list>
+	</section>
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
+		<item value="288" key="DIALOG_WIDTH"/>
+		<item value="1|맑은 고딕|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|맑은 고딕" key="DIALOG_FONT_NAME"/>
+		<item value="391" key="DIALOG_HEIGHT"/>
+		<item value="1295" key="DIALOG_X_ORIGIN"/>
+		<item value="280" key="DIALOG_Y_ORIGIN"/>
+	</section>
+</section>

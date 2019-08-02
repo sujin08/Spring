@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="kr.ac.hit.myapp.member.UserImgDao">
+    <insert id="insert" parameterType="UserImgVo">
+        INSERT INTO attach(att_org_name, att_new_name, att_bbs_no) VALUES (#{attOrgname}, #{attNewName}, #{attBbsNo})
+    </insert>
+    <select id="select" parameterType="int" resultType="UserImgVo">
+        select img_no,img_org_name,img_new_name,img_mem_no
+        from userimg
+        where img_no = #{imgNo}
+    </select>
+</mapper>

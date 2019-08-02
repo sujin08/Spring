@@ -1,0 +1,10 @@
+package kr.ac.hit.myapp.product;
+
+public class ProductDao {
+
+	public int delete(int prodNo) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+}

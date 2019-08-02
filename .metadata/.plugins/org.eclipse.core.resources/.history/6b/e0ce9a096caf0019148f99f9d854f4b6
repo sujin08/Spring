@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--   namespace 값으로 mapper 파일을 나타내는 id 같은 고유값을 부여
+  보통 이 파일에 정의된 sql 문을 실행시킬 Dao 인터페이스의 (패키지포함) 전체이름 -->
+<mapper namespace="kr.ac.hit.myapp.member.MemberDao">
+<resultMap type="kr.ac.hit.myapp.member.MemberVo" id="memberMap">
+    <id property="memId" column="mem_id"/>
+    <result property="memPass" column="mem_pass"/>
+    <result property="memName" column="mem_name"/>
+    <result property="memPoint" column="mem_point"/>
+</resultMap>
+  <!--   실행할 sql문의 종류와 일치하는 태그(앨리먼트)를 사용하여 sql문을 등록 -->
+ <!--  id값으로 이 sql문을 나타내는 고유한 값을 지정 
+       보통 이 sql문을 실행할 dao인터페이스의 메서드 이름과 동일-->
+  <insert id="insert" parameterType="kr.ac.hit.myapp.member.MemberVo">
+     INSERT INTO member( mem_id, mem_pass, mem_name, mem_point ) VALUES (#{memId}, #{memPass}, #{memName}, #{memPoint})
+  </insert>
+ <!--  <select id="selectList" resultType="kr.ac.hit.myapp.member.MemberVo"> -->
+  <select id="selectList" resultMap="memberMap">
+      select mem_id, mem_pass, mem_name, mem_point from member;
+  </select>
+</mapper>

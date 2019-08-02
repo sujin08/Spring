@@ -1,0 +1,13 @@
+package kr.ac.hit.myapp.board;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+@Controller
+public class boardController {
+ 
+	@RequestMapping("/board/write.do")
+	public String Write() {
+		return "/board/boardwrite";
+	}
+}

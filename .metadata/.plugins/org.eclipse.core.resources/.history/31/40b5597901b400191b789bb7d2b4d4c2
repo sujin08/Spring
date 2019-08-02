@@ -1,0 +1,41 @@
+package kr.ac.hit.myapp.member;
+
+public class UserImgVo {
+
+	private int imgNo;
+	private String imgOrgName;
+	private String imgNewName;
+	private int imgMemNo;
+
+	public int getImgNo() {
+		return imgNo;
+	}
+
+	public void setImgNo(int imgNo) {
+		this.imgNo = imgNo;
+	}
+
+	public String getImgOrgName() {
+		return imgOrgName;
+	}
+
+	public void setImgOrgName(String imgOrgName) {
+		this.imgOrgName = imgOrgName;
+	}
+
+	public String getImgNewName() {
+		return imgNewName;
+	}
+
+	public void setImgNewName(String imgNewName) {
+		this.imgNewName = imgNewName;
+	}
+
+	public int getImgMemNo() {
+		return imgMemNo;
+	}
+
+	public void setImgMemNo(int imgMemNo) {
+		this.imgMemNo = imgMemNo;
+	}
+}

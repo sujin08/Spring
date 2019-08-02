@@ -1,0 +1,96 @@
+package kr.ac.hit.myapp.comm;
+
+public class PagrInfo {
+	private String page;
+	private String size;
+	private String pageSize;
+	private String totalRecordCount;
+	
+	private String totalPageCount;
+	private String firstPageNoOnPageList;
+	private String lastPageNoOnPageList;
+	private String firstRecordIndex;
+	private String lastRecordIndex;
+
+	public void makePageHtml() {
+		totalPageCount = ((totalRecordCount-1)/size) + 1;
+		firstPageNoOnPageList = ((page-1)/pageSize)*pageSize + 1;
+		lastPageNoOnPageList = firstPageNoOnPageList+pageSize-1;
+		if(lastPageNoOnPageList>totalRecordCount){lastPageNoOnPageList=totalPageCount};
+		firstRecordIndex = (currentPageNo - 1) * recordCountPerPage;
+		lastRecordIndex = currentPageNo * recordCountPerPage;
+	}
+
+	public String getCurrentPageNo() {
+		return currentPageNo;
+	}
+
+	public void setCurrentPageNo(String currentPageNo) {
+		this.currentPageNo = currentPageNo;
+	}
+
+	public String getRecordCountPerPage() {
+		return recordCountPerPage;
+	}
+
+	public void setRecordCountPerPage(String recordCountPerPage) {
+		this.recordCountPerPage = recordCountPerPage;
+	}
+
+	public String getPageSize() {
+		return pageSize;
+	}
+
+	public void setPageSize(String pageSize) {
+		this.pageSize = pageSize;
+	}
+
+	public String getTotalRecordCount() {
+		return totalRecordCount;
+	}
+
+	public void setTotalRecordCount(String totalRecordCount) {
+		this.totalRecordCount = totalRecordCount;
+	}
+
+	public String getTotalPageCount() {
+		return totalPageCount;
+	}
+
+	public void setTotalPageCount(String totalPageCount) {
+		this.totalPageCount = totalPageCount;
+	}
+
+	public String getFirstPageNoOnPageList() {
+		return firstPageNoOnPageList;
+	}
+
+	public void setFirstPageNoOnPageList(String firstPageNoOnPageList) {
+		this.firstPageNoOnPageList = firstPageNoOnPageList;
+	}
+
+	public String getLastPageNoOnPageList() {
+		return lastPageNoOnPageList;
+	}
+
+	public void setLastPageNoOnPageList(String lastPageNoOnPageList) {
+		this.lastPageNoOnPageList = lastPageNoOnPageList;
+	}
+
+	public String getFirstRecordIndex() {
+		return firstRecordIndex;
+	}
+
+	public void setFirstRecordIndex(String firstRecordIndex) {
+		this.firstRecordIndex = firstRecordIndex;
+	}
+
+	public String getLastRecordIndex() {
+		return lastRecordIndex;
+	}
+
+	public void setLastRecordIndex(String lastRecordIndex) {
+		this.lastRecordIndex = lastRecordIndex;
+	}
+
+}

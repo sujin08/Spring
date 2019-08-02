@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="kr.ac.hit.myapp.board.BoardDao">
+	<resultMap type="BoardVo" id="boardMap">
+		<id column="bbs_no" property="bbsNo" />
+		<result column="bbs_title" property="bbsTitle" />
+		<result column="bbs_content" property="bbsContent" />
+		<result column="bbs_writer" property="bbsWriter" />
+		<result column="bbs_reg_date" property="bbsRegdate" />
+		<result column="bbs_count" property="bbsCount" />
+		<collection property="attList" ofType="AttachVo">
+			<id column="att_no" property="attNo" />
+			<result column="att_org_name" property="attOrgname" />
+			<result column="att_new_name" property="attNewName" />
+			<result column="att_bbs_no" property="attBbsNo" />
+		</collection>
+	</resultMap>
+	<insert id="insert" parameterType="BoardVo"
+		useGeneratedKeys="true" keyProperty="bbsNo">
+		INSERT INTO bbs(bbs_title, bbs_content, bbs_writer) VALUES (#{bbsTitle},
+		#{bbsContent}, #{bbsWriter})
+	</insert>
+	<sql id="searchSql">
+	    <trim prefix="where" prefixOverrides="AND|OR">
+		<if test="searchType=='title' or searchType=='total'">
+		bbs_title Like concat('%',#{searchWord},'%')
+		</if>
+		<if test="searchType=='content' or searchType=='total'">
+		 OR bbs_content Like concat('%',#{searchWord},'%')
+		</if></trim>
+	</sql>
+	<select id="selectList" resultType="BoardVo">
+		select bbs_no, bbs_title, bbs_writer, bbs_reg_date 
+		from bbs
+		<include refid="searchSql" />
+		order by bbs_reg_date desc
+		LiMIT #{firstRecordIndex},#{size}
+	</select>
+	<select id="selectCount" resultType="int">
+	    select count(*) from bbs
+		<include refid="searchSql" />
+		</if></trim>
+	</select>
+	<select id="select" parameterType="int" resultMap="boardMap">
+		select bbs_no, bbs_title, bbs_content, bbs_writer, bbs_reg_date,bbs_count,att_no,att_org_name,att_new_name,att_bbs_no
+		from bbs left outer join attach
+		on bbs_no = att_bbs_no
+		where bbs_no = #{bbsNo};
+	</select>
+	<update id="update" parameterType="BoardVo">
+		update bbs set bbs_title = #{bbsTitle}, bbs_content = #{bbsContent} where
+		bbs_no = #{bbsNo} and bbs_writer = #{bbsWriter}
+	</update>
+	<delete id="delete" parameterType="BoardVo">
+		delete from bbs where bbs_no = #{bbsNo}
+	</delete>
+</mapper>

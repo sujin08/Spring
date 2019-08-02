@@ -1,0 +1,6 @@
+package kr.ac.hit.myapp.member;
+
+public interface UserImgDao {
+
+	public UserImgVo select(int imgNo);
+}
