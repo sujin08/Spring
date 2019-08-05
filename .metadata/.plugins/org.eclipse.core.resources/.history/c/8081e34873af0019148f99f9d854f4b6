@@ -1,8 +1,0 @@
-package kr.ac.hit.myapp.member;
-
-import java.util.List;
-
-public interface MemberDao {
-	public int insert(MemberVo VO) ;
-	public List<MemberVo> selectList();
-}

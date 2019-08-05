@@ -27,11 +27,10 @@
 		<beans:property name="order" value="2" />
 	</beans:bean>
 	
-	<beans:bean
-		class="org.springframework.web.servlet.view.tiles3.TilesConfigurer">
+	<beans:bean class="org.springframework.web.servlet.view.tiles3.TilesConfigurer">
 		<beans:property name="definitions">
 			<beans:list>
-				<beans:value>/views/files/files.xml</beans:value>
+				<beans:value>/WEB-INF/views/files/files.xml</beans:value>
 			</beans:list>
 		</beans:property>
 	</beans:bean>

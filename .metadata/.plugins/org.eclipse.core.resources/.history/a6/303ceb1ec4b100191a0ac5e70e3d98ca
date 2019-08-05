@@ -1,9 +1,0 @@
-package kr.ac.hit.myapp.board;
-
-import java.util.List;
-
-public interface Boardservice {
-
-	public int insert(BoardVo vo);
-	public List<BoardVo> selectList() ;
-}

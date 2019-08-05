@@ -1,7 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
-<%-- <%@ include file="/WEB-INF/views/com/menu.jsp"%> --%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -15,8 +14,10 @@
 		<select name="searchType">
 			<option value="title" ${searchInfo.searchType == 'title'? 'selected' : ''}>제목</option>
 			<option value="content" ${searchInfo.searchType == 'content'? 'selected' : ''}>내용</option>
-			<option value="content" ${searchInfo.searchType == 'content'? 'selected' : ''}>내용+제목</option>
-		</select> <input type="text" name="searchWord" value="${searchInfo.searchWord}" /> <input type="hidden" name="page" value="1" /> <input type="submit" value="검색" />
+			<option value="total" ${searchInfo.searchType == 'content'? 'selected' : ''}>내용+제목</option>
+		</select> <input type="text" name="searchWord" value="${searchInfo.searchWord}" /> 
+		<input type="hidden" name="page" value="1" /> 
+		<input type="submit" value="검색" />
 	</form>
 	<script>
 	if('${searchInfo.searchType}')

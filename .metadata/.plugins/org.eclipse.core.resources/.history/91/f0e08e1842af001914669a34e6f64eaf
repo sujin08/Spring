@@ -1,9 +1,0 @@
-package kr.ac.hit.myapp.member;
-
-public class MemberServiceImpl implements MemberService {
-	@Override
-	public int insert(MemberVo VO) {
-		
-		return 0;
-	}
-}

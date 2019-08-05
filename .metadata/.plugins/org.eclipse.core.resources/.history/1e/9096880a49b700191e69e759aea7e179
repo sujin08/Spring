@@ -1,0 +1,18 @@
+package kr.ac.hit.myapp.member;
+
+import java.util.List;
+
+import org.apache.ibatis.annotations.Mapper;
+
+import kr.ac.hit.myapp.comm.SearchInfo;
+
+@Mapper
+public interface MemberDao {
+	public int insert(MemberVo vo) ;
+	public List<MemberVo> selectList();
+	public MemberVo select(String memId);
+	public int update(MemberVo vo) ;
+	public int delete(String memId) ;
+	public MemberVo selectLoginUser(MemberVo vo);
+	public int selectCount(SearchInfo info);
+}

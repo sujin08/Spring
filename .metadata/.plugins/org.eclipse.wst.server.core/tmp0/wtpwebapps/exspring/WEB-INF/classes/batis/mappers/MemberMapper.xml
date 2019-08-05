@@ -18,9 +18,26 @@
      INSERT INTO member( mem_id, mem_pass, mem_name, mem_point, mem_img) VALUES (#{memId}, #{memPass}, #{memName}, #{memPoint}, #{memImg})
   </insert>
  <!--  <select id="selectList" resultMap="memberMap"> -->
-  <select id="selectList" resultType="MemberVo">
-      select mem_id, mem_name, mem_point from member
-  </select>
+  	<sql id="searchSql">
+	    <trim prefix="where" prefixOverrides="AND|OR">
+		<if test="searchType=='memId' or searchType=='total'">
+		mem_id Like concat('%',#{searchWord},'%')
+		</if>
+		<if test="searchType=='memName' or searchType=='total'">
+		 OR mem_name Like concat('%',#{searchWord},'%')
+		</if></trim>
+	</sql>
+	<select id="selectList" resultType="MemberVo">
+		select mem_id, mem_name, mem_point
+		from member
+		<include refid="searchSql" />
+		order by mem_id desc
+		LiMIT #{firstRecordIndex},#{size}
+	</select>
+	<select id="selectCount" resultType="int">
+	    select count(*) from member
+		<include refid="searchSql" />
+	</select>
    <select id="select" parameterType="string" resultType="MemberVo">
       select mem_id, mem_name, mem_point, mem_img from member where mem_id = #{memId} 
   </select>

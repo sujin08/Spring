@@ -1,7 +1,0 @@
-package kr.ac.hit.myapp.member;
-
-public class MemberService {
-  public int insert(MemberVo vo ) {
-	return 1;
- }
-}

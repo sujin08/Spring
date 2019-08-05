@@ -1,5 +1,0 @@
-package kr.ac.hit.myapp.board;
-
-public interface BoardDao {
-
-}

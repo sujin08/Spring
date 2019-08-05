@@ -8,9 +8,8 @@
 <title>The Sin</title>
 </head>
 <body>
-<tiles:addAttribute />
-<div><tiles:addAttribute name="header" /></div>
-<div><tiles:addAttribute name="menu" /></div>
-<div><tiles:addAttribute name="footer" /></div>
+<div><tiles:insertAttribute name="header" /></div>
+<div><tiles:insertAttribute name="body" /></div>
+<div><tiles:insertAttribute name="footer" /></div>
 </body>
 </html>

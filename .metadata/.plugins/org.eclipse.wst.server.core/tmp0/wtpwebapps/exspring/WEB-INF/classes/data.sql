@@ -42,7 +42,7 @@ CREATE TABLE member
 -- , PRIMARY KEY ('mem_id')
 );
 
-select * from bbs;
+select * from member;
 
 select *
 from bbs left outer join attach 
@@ -52,7 +52,7 @@ where bbs_no = 8;
 drop table userimg;
 alter table member add mem_img varchar(100);
 
-delete from member;
+delete from member where mem_id in (ssar);
 delete from bbs;
 
 -- BBS 테이블 생성  
