@@ -1,0 +1,25 @@
+package kr.ac.hit.myapp.reply;
+
+import java.util.List;
+
+import javax.annotation.Resource;
+
+import org.springframework.stereotype.Service;
+
+import kr.ac.hit.myapp.board.BoardVo;
+
+@Service
+public class ReplyServiceImpl implements ReplyService{
+
+	@Resource
+	private ReplyDao replyDao;
+	
+	@Override
+	public int insert(ReplyVo vo) {
+		return replyDao.insert(vo);
+	}
+	@Override
+	public List<ReplyVo> selectList(BoardVo vo) {		
+		return replyDao.selectList(vo);
+	}
+}

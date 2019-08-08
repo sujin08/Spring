@@ -1,9 +1,0 @@
-package kr.ac.hit.myapp.board;
-
-import org.apache.ibatis.annotations.Mapper;
-
-@Mapper
-public interface AttachDao {
-
-	public int insert(AttachVo vo);
-}

@@ -1,0 +1,11 @@
+package kr.ac.hit.myapp.reply;
+
+import java.util.List;
+
+import kr.ac.hit.myapp.board.BoardVo;
+
+public interface ReplyService {
+
+	public int insert(ReplyVo vo);
+	public List<ReplyVo> selectList(BoardVo vo);
+}

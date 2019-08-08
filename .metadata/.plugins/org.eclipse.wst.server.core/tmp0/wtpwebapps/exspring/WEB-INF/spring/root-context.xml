@@ -4,10 +4,12 @@
 	xmlns:mybatis-spring="http://mybatis.org/schema/mybatis-spring"
 	xmlns:tx="http://www.springframework.org/schema/tx"
 	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:util="http://www.springframework.org/schema/util"
 	xsi:schemaLocation="http://mybatis.org/schema/mybatis-spring http://mybatis.org/schema/mybatis-spring-1.2.xsd
 		http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd
-		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.3.xsd">
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.3.xsd
+		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.3.xsd">
 
 	<!-- Root Context: 스프링의 dispatcherServlet들이 공유하는 객체들을 등록 -->
 	<!-- 즉, 일반적으로 Service, Dao 와 관련된 객체들을 등록 -->
@@ -18,14 +20,19 @@
 		class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
 		<constructor-arg ref="dataSource"></constructor-arg>
 	</bean>
+	<context:property-placeholder location="classpath:evn.properties"/>
 
 	<!-- DB와 연결을 생성해주는 데이터소스 객체 등록 -->
 	<bean id="dataSource"
 		class="org.apache.commons.dbcp2.BasicDataSource">
-		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
+<!-- 		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
 		<property name="url" value="jdbc:mysql://localhost:3306/com" />
 		<property name="username" value="com" />
-		<property name="password" value="com01" />
+		<property name="password" value="com01" /> -->
+		<property name="driverClassName" value="${db.driver}" />
+		<property name="url" value="${db.url" />
+		<property name="username" value="${db.username" />
+		<property name="password" value="${db.password}" />
 	</bean>
 
 	<!-- mybatise의SqlSession 객체를 생성해주는 객체를 등록 -->
@@ -45,4 +52,5 @@
 	<context:component-scan base-package="kr.ac.hit.myapp">
 		<context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller" />
 	</context:component-scan>
+	
 </beans>

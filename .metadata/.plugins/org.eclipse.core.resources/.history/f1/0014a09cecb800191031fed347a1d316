@@ -1,0 +1,19 @@
+package kr.ac.hit.myapp.reply;
+
+import javax.annotation.Resource;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+@Controller
+public class ReplyController {
+
+	@Resource
+	private ReplyService replyService;
+	
+	@RequestMapping("/reply/add.do")
+	public String add(ReplyVo vo) {
+		int num = replyService.insert(vo);
+		return "";
+	}
+}

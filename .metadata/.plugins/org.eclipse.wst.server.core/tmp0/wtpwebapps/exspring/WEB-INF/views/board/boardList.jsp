@@ -47,7 +47,7 @@
 	<br />
 	<a href="${pageContext.request.contextPath}/board/write.do">글쓰기</a>
 	<script>
-		function gopage(no) {
+		function goPage(no) {
 			document.querySelector('[name="page"]').value =no;
 			document.querySelector('#sform').submit();
 		}

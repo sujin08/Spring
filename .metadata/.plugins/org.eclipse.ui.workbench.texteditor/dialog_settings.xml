@@ -15,6 +15,7 @@
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;"/>
 			<item value="package kr.ac.hit.myapp.comm;"/>
 			<item value="package kr.ac.hit.myapp.member;"/>
 			<item value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; ?&gt;"/>
@@ -29,7 +30,6 @@
 			<item value="detection"/>
 			<item value="resource_update"/>
 			<item value="barcode_info"/>
-			<item value="file_opener_list"/>
 		</list>
 		<list key="replacehistory">
 			<item value="hsqldb-2.3.2.jar"/>

@@ -12,7 +12,7 @@
 	<table>
 	<tbody>
 	<tr><td>제목</td><td><input type="text" name="bbsTitle"/> <br /></td></tr>
-	<tr><td>작성자</td><td><input type="text" name="bbsWriter" value="${loginUser.memId}"/> <br /></td></tr>
+<%-- 	<tr><td>작성자</td><td><input type="text" name="bbsWriter" value="${loginUser.memId}"/> <br /></td></tr> --%>
 	<tr><td>내용</td><td><textarea rows="20" cols ="200" name="bbsContent"></textarea></td></tr>
 	<tr><td>첨부파일1</td><td><input type="file" name="uploadList"/> <br /></td></tr>
 	<tr><td>첨부파일2</td><td><input type="file" name="uploadList"/> <br /></td></tr>

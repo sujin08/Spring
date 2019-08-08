@@ -75,3 +75,22 @@
 8월 05, 2019 17:04:59.23 NEW SESSION
 8월 05, 2019 17:04:59.23 [9472:10676:0805/170459.140:ERROR:audio_manager_base.cc(363)] Invalid audio output parameters received; using fake audio path: format: 0, channel_layout: 0, channels: 0, sample_rate: 0, frames_per_buffer: 0, effects: 0, mic_positions: 
 8월 05, 2019 17:11:05.19 [9472:10480:0805/171105.191:ERROR:browser_process_sub_thread.cc(221)] Waited 24 ms for network service
+
+8월 06, 2019 10:08:27.07 NEW SESSION
+8월 06, 2019 10:08:27.07 [5140:5256:0806/100827.075:ERROR:browser_process_sub_thread.cc(221)] Waited 4 ms for network service
+8월 06, 2019 17:37:40.79 [13016:13500:0806/173740.790:ERROR:browser_process_sub_thread.cc(221)] Waited 19 ms for network service
+8월 06, 2019 18:13:28.27 [12736:12696:0806/181328.278:ERROR:audio_manager_base.cc(363)] Invalid audio output parameters received; using fake audio path: format: 0, channel_layout: 0, channels: 0, sample_rate: 0, frames_per_buffer: 0, effects: 0, mic_positions: 
+8월 06, 2019 18:13:28.47 [12736:12696:0806/181328.472:ERROR:audio_manager_base.cc(363)] Invalid audio output parameters received; using fake audio path: format: 0, channel_layout: 0, channels: 0, sample_rate: 0, frames_per_buffer: 0, effects: 0, mic_positions: 
+8월 06, 2019 18:18:33.77 [12736:12696:0806/181833.776:ERROR:audio_manager_base.cc(363)] Invalid audio output parameters received; using fake audio path: format: 0, channel_layout: 0, channels: 0, sample_rate: 0, frames_per_buffer: 0, effects: 0, mic_positions: 
+8월 06, 2019 18:18:37.79 [12736:12696:0806/181837.799:ERROR:audio_manager_base.cc(363)] Invalid audio output parameters received; using fake audio path: format: 0, channel_layout: 0, channels: 0, sample_rate: 0, frames_per_buffer: 0, effects: 0, mic_positions: 
+8월 06, 2019 18:19:24.66 [12736:12696:0806/181924.665:ERROR:audio_manager_base.cc(363)] Invalid audio output parameters received; using fake audio path: format: 0, channel_layout: 0, channels: 0, sample_rate: 0, frames_per_buffer: 0, effects: 0, mic_positions: 
+8월 06, 2019 18:20:00.12 [12736:4192:0806/182000.125:ERROR:browser_process_sub_thread.cc(221)] Waited 14 ms for network service
+
+8월 08, 2019 09:50:33.71 NEW SESSION
+8월 08, 2019 09:50:33.71 [6764:6224:0808/095033.711:ERROR:browser_process_sub_thread.cc(221)] Waited 10 ms for network service
+8월 08, 2019 09:50:33.72 
+8월 08, 2019 09:50:33.72 KLIB_SelfTest return : KLR_OK
+8월 08, 2019 10:29:34.68 [6504:8084:0808/102934.687:ERROR:browser_process_sub_thread.cc(221)] Waited 5 ms for network service
+8월 08, 2019 18:08:22.55 [5512:5356:0808/180822.554:ERROR:browser_process_sub_thread.cc(221)] Waited 38 ms for network service
+8월 08, 2019 18:08:22.65 
+8월 08, 2019 18:08:22.65 KLIB_SelfTest return : KLR_OK

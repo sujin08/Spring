@@ -42,7 +42,7 @@ CREATE TABLE member
 -- , PRIMARY KEY ('mem_id')
 );
 
-select * from member;
+select * from reply;
 
 select *
 from bbs left outer join attach 
@@ -53,7 +53,7 @@ drop table userimg;
 alter table member add mem_img varchar(100);
 
 delete from member where mem_id in (ssar);
-delete from bbs;
+delete from reply;
 
 -- BBS 테이블 생성  
 -- MySQL 5.6.5, MariaDB 10.0 버전부터 DEFAULT CURRENT_TIMESTAMP, ON UPDATE CURRENT_TIMESTAMP 설정 가능
